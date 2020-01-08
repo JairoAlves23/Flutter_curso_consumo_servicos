@@ -1,2 +1,2 @@
-const CHAVE_YOUTUBE_API = "";
+const CHAVE_YOUTUBE_API = "Teste";
 
