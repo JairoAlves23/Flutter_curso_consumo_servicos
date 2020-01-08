@@ -8,7 +8,7 @@
 .buildlog/
 .history
 .svn/
-/lib/.Api
+ Api
 
 # IntelliJ related
 *.iml
