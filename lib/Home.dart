@@ -7,18 +7,18 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
+
+
 class Home extends StatefulWidget {
   @override
   _HomeState createState() => _HomeState();
 }
 
 class _HomeState extends State<Home> {
-
   int _indiceAtual = 0;
-
+  
   @override
   Widget build(BuildContext context) {
-
     List<Widget> telas = [
       Inicio(),
       EmAlta(),

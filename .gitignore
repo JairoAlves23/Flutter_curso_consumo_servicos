@@ -8,7 +8,7 @@
 .buildlog/
 .history
 .svn/
-.Api.dart
+package:consumo_servicos/telas/ApiNova.dart
 
 # IntelliJ related
 *.iml
