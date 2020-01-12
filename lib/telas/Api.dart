@@ -1,14 +1,13 @@
-import 'dart:ffi';
-
+import 'package:consumo_servicos/model/Video.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
-const CHAVE_YOUTUBE_API = "AIzaSyBrQSLDqhY4II3lRaYHkCEW5zfNOQtsGZc";
+const CHAVE_YOUTUBE_API = "";
 const ID_CANAL = "UCVHFbqXqoYvEWM1Ddxl0QDg";
 const URL_BASE = "https://www.googleapis.com/youtube/v3/";
 
 class Api {
-  pesquisar(String pesquisa) async {
+  Future<List<Video>> pesquisar(String pesquisa) async {
     http.Response response = await http.get(URL_BASE +
         "search"
             "?part=snippet"
@@ -20,9 +19,25 @@ class Api {
             "&q=$pesquisa");
 
     if (response.statusCode == 200) {
-      //print("resultado" + response.body);
-      Map<String,dynamic> dadosJson = json.decode(response.body);
-      print("resultado" + dadosJson.toString());
+      Map<String, dynamic> dadosJson = json.decode(response.body);
+
+      List<Video> videos = dadosJson["items"].map<Video>((map) {
+        return Video.fromJson(map);
+        //return Video.converterJson(map);
+      }).toList();
+
+      return videos;
+
+      /*  for( var video in videos ){
+        print("resultado: " + video.titulo );
+      } */
+      //print("Resultado: " + videos.toString() );
+
+      /*
+      for( var video in dadosJson["items"] ){
+        print("Resultado: " + video.toString() );
+      }*/
+      //print("resultado: " + dadosJson["items"].toString() );
 
     } else {}
   }

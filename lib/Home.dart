@@ -1,3 +1,4 @@
+import 'package:consumo_servicos/CustomShowDelegate.dart';
 import 'package:consumo_servicos/telas/Biblioteca.dart';
 import 'package:consumo_servicos/telas/EmAlta.dart';
 import 'package:consumo_servicos/telas/Inicio.dart';
@@ -7,8 +8,6 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
-
-
 class Home extends StatefulWidget {
   @override
   _HomeState createState() => _HomeState();
@@ -16,11 +15,12 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   int _indiceAtual = 0;
-  
+  String _resultado = "";
+
   @override
   Widget build(BuildContext context) {
     List<Widget> telas = [
-      Inicio(),
+      Inicio(_resultado),
       EmAlta(),
       Inscricao(),
       Biblioteca(),
@@ -37,26 +37,20 @@ class _HomeState extends State<Home> {
         ),
         actions: <Widget>[
           IconButton(
-            icon: Icon(Icons.videocam),
-            onPressed: () {
-              print("acao: videcam");
-            },
-          ),
-          IconButton(
             icon: Icon(Icons.search),
-            onPressed: () {
-              print("acao: search");
-            },
-          ),
-          IconButton(
-            icon: Icon(Icons.account_circle),
-            onPressed: () {
-              print("acao: circle");
+            onPressed: () async {
+              String res = await showSearch(context: context, delegate: CustomShowDelegate());
+              setState(() {
+                _resultado = res;
+              });
             },
           ),
         ],
       ),
-      body: telas[_indiceAtual],
+      body: Container(
+        padding: EdgeInsets.all(16),
+        child: telas[_indiceAtual],
+      ),
       bottomNavigationBar: BottomNavigationBar(
         fixedColor: Colors.white,
         currentIndex: _indiceAtual,
