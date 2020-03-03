@@ -7,48 +7,116 @@ class Home extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("Unidade de Medida"),
-        actions: <Widget>[Icon(Icons.sort)],
-      ),
-      body: Column(
-        children: <Widget>[
-          IconTileMedida(
-            highLighted: true,
-            iconData: Icons.dehaze,
-            label: "Und",
-          ),
-          Divider(height: 15,),
-          IconTileMedida(
-            highLighted: false,
-            iconData: Icons.dehaze,
-            label: "Dz",
-          ),
-          Divider(height: 15,),
-          IconTileMedida(
-            highLighted: false,
-            iconData: Icons.dehaze,
-            label: "ml",
-          ),
-          Divider(height: 15,),
-          IconTileMedida(
-            highLighted: false,
-            iconData: Icons.dehaze,
-            label: "Dz",
-          ),
-          Divider(height: 15,),
-          IconTileMedida(
-            highLighted: false,
-            iconData: Icons.dehaze,
-            label: "L",
-          ),
-          Divider(height: 15,),
-          IconTileMedida(
-            highLighted: false,
-            iconData: Icons.dehaze,
-            label: "Kg",
-          ),
-          Divider(height: 15,),
+        actions: <Widget>[
+          Container(
+            child: Icon(Icons.sort),
+            margin: EdgeInsets.only(right: 15),
+          )
         ],
       ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: <Widget>[
+            IconTileMedida(
+              highLighted: false,
+              iconData: Icons.dehaze,
+              label: "Und",
+            ),
+            Divider(
+              height: 15,
+              color: Colors.purple[900],
+            ),
+            IconTileMedida(
+              highLighted: false,
+              iconData: Icons.dehaze,
+              label: "Dz",
+            ),
+            Divider(
+              height: 15,
+              color: Colors.purple[900],
+            ),
+            IconTileMedida(
+              highLighted: false,
+              iconData: Icons.dehaze,
+              label: "Ml",
+            ),
+            Divider(
+              height: 15,
+              color: Colors.purple[900],
+            ),
+            IconTileMedida(
+              highLighted: false,
+              iconData: Icons.dehaze,
+              label: "Dz",
+            ),
+            Divider(
+              height: 15,
+              color: Colors.purple[900],
+            ),
+            IconTileMedida(
+              highLighted: false,
+              iconData: Icons.dehaze,
+              label: "L",
+            ),
+            Divider(
+              height: 15,
+              color: Colors.purple[900],
+            ),
+            IconTileMedida(
+              highLighted: false,
+              iconData: Icons.dehaze,
+              label: "Kg",
+            ),
+            Divider(
+              height: 15,
+              color: Colors.purple[900],
+            ),
+            IconTileMedida(
+              highLighted: false,
+              iconData: Icons.dehaze,
+              label: "Kg",
+            ),
+            Divider(
+              height: 15,
+              color: Colors.purple[900],
+            ),
+            IconTileMedida(
+              highLighted: false,
+              iconData: Icons.dehaze,
+              label: "Kg",
+            ),
+            Divider(
+              height: 15,
+              color: Colors.purple[900],
+            ),
+            IconTileMedida(
+              highLighted: false,
+              iconData: Icons.dehaze,
+              label: "Kg2",
+            ),
+            Divider(
+              height: 15,
+              color: Colors.purple[900],
+            ),
+            IconTileMedida(
+              highLighted: false,
+              iconData: Icons.dehaze,
+              label: "Kg3",
+            ),
+            Divider(
+              height: 15,
+              color: Colors.purple[900],
+            ),
+          ],
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Icon(
+          Icons.add,
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
     );
   }
 }
