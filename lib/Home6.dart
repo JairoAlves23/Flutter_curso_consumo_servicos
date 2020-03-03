@@ -148,9 +148,6 @@ class _Home6State extends State<Home6> {
                                   title: Text(post.title),
                                   leading: Text(post.id.toString()),
                                 ),
-                              return ListTile(
-                                title: Text(post.title),
-                                subtitle: Text(post.id.toString()),
                               );
                             },
                           );
