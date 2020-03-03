@@ -4,12 +4,12 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
-class Home extends StatefulWidget {
+class Home6 extends StatefulWidget {
   @override
-  _HomeState createState() => _HomeState();
+  _Home6State createState() => _Home6State();
 }
 
-class _HomeState extends State<Home> {
+class _Home6State extends State<Home6> {
   String _urlBase = "https://jsonplaceholder.typicode.com";
 
   Future<List<Post>> _recuperarPostagens() async {
@@ -148,6 +148,9 @@ class _HomeState extends State<Home> {
                                   title: Text(post.title),
                                   leading: Text(post.id.toString()),
                                 ),
+                              return ListTile(
+                                title: Text(post.title),
+                                subtitle: Text(post.id.toString()),
                               );
                             },
                           );
